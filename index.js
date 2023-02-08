@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import bodyParser from "body-parser";
 
 import usersRoutes from "./routes/users.js";
@@ -6,6 +7,10 @@ import UserMySQLRoutes from "./routes/usersMySQL.js";
 
 const app = express();
 const PORT = 4000;
+
+app.use(cors({
+    origin: 'http://localhost:3000'
+}));
 
 app.use(bodyParser.json());
 

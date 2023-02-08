@@ -16,5 +16,10 @@ export const SQL_QueryUser = `
     `;
 
 export const SQL_QueryUserId = `
-    SELECT 
+    SELECT firstName, lastName, email from users where id = ?
+    `;
+
+export const SQL_InsertInto = `
+    INSERT INTO users (username, password, firstName, lastName, email, sex, address)
+    VALUES ( ?, ?, ?, ?, ?, ?, ?);
     `;
